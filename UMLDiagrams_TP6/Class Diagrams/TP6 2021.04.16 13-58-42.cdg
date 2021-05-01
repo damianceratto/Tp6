@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TP6">
+  <ClassDiagramComponents>
+    <Class name="DirectorioTelefonico" package="" visibility="public" xPosition="668.0" yPosition="237.0">
+      <Fields>
+        <Field name="lista" type="TreeMap" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="buscarCliente" returnType="Long" visibility="public">
+          <Argument type="Long" name="tel"/>
+        </Method>
+        <Method name="buscarTelefono" returnType="String" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="buscarClientes" returnType="String" visibility="public">
+          <Argument type="String" name="ciudad"/>
+        </Method>
+        <Method name="borrarCliente" returnType="long" visibility="public">
+          <Argument type="long" name="dni"/>
+        </Method>
+        <Method name="agregarCliente" returnType="Cliente" visibility="public">
+          <Argument type="Long" name="numero"/>
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Cliente" package="" visibility="public" xPosition="66.0" yPosition="132.0">
+      <Fields>
+        <Field name="dni" type="long" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="domicilio" type="String" visibility="private"/>
+        <Field name="ciudad" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="long" name="dni"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="domicilio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDni" returnType="long" visibility="public"/>
+        <Method name="SetDni" returnType="void" visibility="public">
+          <Argument type="long" name="dni"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="DirectorioTelefonico" target="Cliente" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
